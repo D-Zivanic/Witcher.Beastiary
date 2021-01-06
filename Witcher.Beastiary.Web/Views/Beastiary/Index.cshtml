@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Witcher.Beastiary.Core.Models.MonsterModel>
+@{
+}
+<h1> Hello World!</h1>
+
+<table class="table table-striped">
+    @foreach (var beast in Model)
+    {
+    <tr>
+        <td>@beast.Name</td>
+        <td>@beast.Location</td>
+    </tr>
+    }
+    
+</table>

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Witcher.Beastiary.Core.Context;
+using Witcher.Beastiary.Data.Context;
 
 namespace Witcher.Beastiary.Data.Migrations
 {

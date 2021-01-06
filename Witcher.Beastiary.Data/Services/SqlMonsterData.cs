@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using Witcher.Beastiary.Core.Context;
+using System.Linq;
+using Witcher.Beastiary.Data.Context;
 using Witcher.Beastiary.Core.Models;
 using Witcher.Beastiary.Data.Interface;
 
-namespace Witcher.Beastiary.Core.Services
+namespace Witcher.Beastiary.Data.Services
 {
-    class SqlMonsterData : IMonsterData
+    public class SqlMonsterData : IMonsterData
     {
         private readonly MonsterDbContext _db;
 
@@ -17,7 +17,7 @@ namespace Witcher.Beastiary.Core.Services
         }
         public IEnumerable<MonsterModel> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.Beastiary.OrderBy(b => b.Name);
         }
 
         public MonsterModel GetSingle(int id)

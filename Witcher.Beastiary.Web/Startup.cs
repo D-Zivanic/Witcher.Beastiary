@@ -4,12 +4,14 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Witcher.Beastiary.Core.Context;
+using Witcher.Beastiary.Data.Context;
+using Witcher.Beastiary.Data.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Witcher.Beastiary.Data.Interface;
 
 namespace Witcher.Beastiary.Web
 {
@@ -26,6 +28,7 @@ namespace Witcher.Beastiary.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<IMonsterData, SqlMonsterData>();
             services.AddDbContextPool<MonsterDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("WitcherMainDb"));
