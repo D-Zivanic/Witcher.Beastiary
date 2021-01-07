@@ -9,5 +9,7 @@ namespace Witcher.Beastiary.Data.Interface
     {
         IEnumerable<MonsterModel> GetAll();
         MonsterModel GetSingle(int id);
+        MonsterModel Create(MonsterModel newBeast);
+        int Save();
     }
 }
