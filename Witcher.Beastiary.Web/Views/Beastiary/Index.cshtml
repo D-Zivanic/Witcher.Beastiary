@@ -3,11 +3,13 @@
 }
 <h1> Hello World!</h1>
 
+<a class="btn-sm btn-outline-primary" asp-controller="" asp-action="" disabled>Add Beast</a>
+
 <table class="table table-striped">
     @foreach (var beast in Model)
     {
     <tr>
-        <td>@beast.Name</td>
+        <td><a asp-controller="Beast" asp-action="Index" asp-route-id="@beast.Id">@beast.Name</a></td>
         <td>@beast.Location</td>
     </tr>
     }

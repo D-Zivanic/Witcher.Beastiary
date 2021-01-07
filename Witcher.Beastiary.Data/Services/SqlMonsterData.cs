@@ -22,7 +22,7 @@ namespace Witcher.Beastiary.Data.Services
 
         public MonsterModel GetSingle(int id)
         {
-            throw new NotImplementedException();
+            return _db.Beastiary.FirstOrDefault(b => b.Id == id);
         }
     }
 }
