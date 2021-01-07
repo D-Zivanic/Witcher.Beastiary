@@ -15,6 +15,14 @@ namespace Witcher.Beastiary.Data.Services
         {
             _db = db;
         }
+
+        public MonsterModel Create(MonsterModel newBeast)
+        {
+            _db.Add(newBeast);
+            Save();
+            return newBeast;
+        }
+
         public IEnumerable<MonsterModel> GetAll()
         {
             return _db.Beastiary.OrderBy(b => b.Name);
@@ -23,6 +31,11 @@ namespace Witcher.Beastiary.Data.Services
         public MonsterModel GetSingle(int id)
         {
             return _db.Beastiary.FirstOrDefault(b => b.Id == id);
+        }
+
+        public int Save()
+        {
+            return _db.SaveChanges();
         }
     }
 }
