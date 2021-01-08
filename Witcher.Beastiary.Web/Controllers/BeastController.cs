@@ -50,5 +50,11 @@ namespace Witcher.Beastiary.Web.Controllers
             _monsterData.Update(updateMonster);
             return RedirectToAction("Index", new { updateMonster.Id });
         }
+
+        public IActionResult Delete(int id)
+        {
+            _monsterData.Delete(id);
+            return RedirectToAction("Index", "Beastiary");
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace Witcher.Beastiary.Data.Interface
         MonsterModel GetSingle(int id);
         MonsterModel Create(MonsterModel newMonster);
         MonsterModel Update(MonsterModel updateMonster);
+        MonsterModel Delete(int id);
         int Save();
     }
 }
