@@ -24,6 +24,14 @@ namespace Witcher.Beastiary.Data.Services
             return newMonster;
         }
 
+        public MonsterModel Delete(int id)
+        {
+            var monster = GetSingle(id);
+            _db.Remove(monster);
+            Save();
+            return monster;
+        }
+
         public IEnumerable<MonsterModel> GetAll()
         {
             return _db.Beastiary.OrderBy(b => b.Name);
