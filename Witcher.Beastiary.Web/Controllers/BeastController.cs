@@ -31,10 +31,24 @@ namespace Witcher.Beastiary.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(MonsterModel newBeast)
+        public IActionResult Create(MonsterModel newMonster)
         {
-            _monsterData.Create(newBeast);
-            return RedirectToAction("Index", new { newBeast.Id });
+            _monsterData.Create(newMonster);
+            return RedirectToAction("Index", new { newMonster.Id });
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id) 
+        {
+            var model = _monsterData.GetSingle(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(MonsterModel updateMonster)
+        {
+            _monsterData.Update(updateMonster);
+            return RedirectToAction("Index", new { updateMonster.Id });
         }
     }
 }

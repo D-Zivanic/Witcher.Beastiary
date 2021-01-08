@@ -1,7 +1,7 @@
 ﻿@model Witcher.Beastiary.Core.Models.MonsterModel
 
     <div class="row">
-        <a class="btn-sm btn-outline-info" asp-controller="" asp-action="" disabled>Edit</a>
+        <a class="btn-sm btn-outline-info" asp-controller="Beast" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
         <a class="btn-sm btn-outline-primary" asp-controller="Beastiary" asp-action="Index">Back to List</a>
     </div>
 

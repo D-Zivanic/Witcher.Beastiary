@@ -4,6 +4,7 @@ using System.Linq;
 using Witcher.Beastiary.Data.Context;
 using Witcher.Beastiary.Core.Models;
 using Witcher.Beastiary.Data.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace Witcher.Beastiary.Data.Services
 {
@@ -16,11 +17,11 @@ namespace Witcher.Beastiary.Data.Services
             _db = db;
         }
 
-        public MonsterModel Create(MonsterModel newBeast)
+        public MonsterModel Create(MonsterModel newMonster)
         {
-            _db.Add(newBeast);
+            _db.Add(newMonster);
             Save();
-            return newBeast;
+            return newMonster;
         }
 
         public IEnumerable<MonsterModel> GetAll()
@@ -36,6 +37,14 @@ namespace Witcher.Beastiary.Data.Services
         public int Save()
         {
             return _db.SaveChanges();
+        }
+
+        public MonsterModel Update(MonsterModel updateMonster)
+        {
+            var entity = _db.Beastiary.Attach(updateMonster);
+            entity.State = EntityState.Modified;
+            Save();
+            return updateMonster;
         }
     }
 }
