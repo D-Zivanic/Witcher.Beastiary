@@ -2,7 +2,7 @@
 
 <div class="row">
     <a class="btn btn-sm btn-outline-info" asp-controller="Beast" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-    <a class="btn btn-sm btn-outline-danger" asp-controller="Beast" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+    <a class="btn btn-sm btn-outline-danger" asp-route-id="@Model.Id" data-toggle="modal" data-target="#deleteModal">Delete</a>
     <a class="btn btn-sm btn-outline-primary" asp-controller="Beastiary" asp-action="Index">Back to List</a>
 </div>
 
@@ -13,3 +13,5 @@
     <h2>@Model.Weakness</h2>
 
     <p>@Model.Description</p>
+
+<partial name="_Delete" />
