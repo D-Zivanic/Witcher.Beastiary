@@ -12,8 +12,8 @@
             <div class="modal-body">
                 <p>Are you sure you want to delete:</p>
 
-                <p>@Model.Name </p>
-                <p>@Model.Location</p>
+                <p>Name: @Model.Name </p>
+                <p>Location: @Model.Location</p>
             </div>
             <div class="modal-footer">
                 <a class="btn btn-sm btn-outline-primary" asp-controller="Beast" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
