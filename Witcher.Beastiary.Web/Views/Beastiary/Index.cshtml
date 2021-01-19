@@ -4,14 +4,18 @@
 <h1> Hello World!</h1>
 
 <a class="btn btn-sm btn-outline-primary" asp-controller="Beast" asp-action="Create">Add Beast</a>
+<br />
+<br />
 
-<table class="table table-striped">
+<div class="row">
     @foreach (var beast in Model)
     {
-    <tr>
-        <td><a asp-controller="Beast" asp-action="Index" asp-route-id="@beast.Id">@beast.Name</a></td>
-        <td>@beast.Location</td>
-    </tr>
+        <div class="card w-50">
+            <div class="card-body">
+                <h3><a asp-controller="Beast" asp-action="Index" asp-route-id="@beast.Id">@beast.Name</a></h3>
+                <h6>@beast.Location</h6>
+            </div>
+        </div>
     }
-    
-</table>
+
+</div>
