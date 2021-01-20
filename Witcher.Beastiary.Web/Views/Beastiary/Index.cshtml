@@ -1,21 +1,49 @@
 ﻿@model IEnumerable<Witcher.Beastiary.Core.Models.MonsterModel>
 @{
 }
-<h1> Hello World!</h1>
+<h1>Beastiary</h1>
 
 <a class="btn btn-sm btn-outline-primary" asp-controller="Beast" asp-action="Create">Add Beast</a>
 <br />
 <br />
 
+
+<div>
+    <h2>Beast</h2>
+    <hr />
+</div>
 <div class="row">
     @foreach (var beast in Model)
     {
-        <div class="card w-50">
-            <div class="card-body">
-                <h3><a asp-controller="Beast" asp-action="Index" asp-route-id="@beast.Id">@beast.Name</a></h3>
-                <h6>@beast.Location</h6>
+        @if (beast.Type == Witcher.Beastiary.Core.Models.MonsterType.Beast)
+        {
+            <div class="card w-50">
+                <div class="card-body">
+                    <h3><a asp-controller="Beast" asp-action="Index" asp-route-id="@beast.Id">@beast.Name</a></h3>
+                    <h6>@beast.Location</h6>
+                </div>
             </div>
-        </div>
+        }
+    }
+
+</div>
+
+<div>
+    <h2>Cursed Ones</h2>
+    <hr />
+</div>
+<div class="row">
+    @foreach (var cursedOnes in Model)
+    {
+        @if (cursedOnes.Type == Witcher.Beastiary.Core.Models.MonsterType.Cursed)
+        {
+            <div class="card w-50">
+                <div class="card-body">
+                    <h3><a asp-controller="Beast" asp-action="Index" asp-route-id="@cursedOnes.Id">@cursedOnes.Name</a></h3>
+                    <h6>@cursedOnes.Location</h6>
+                </div>
+            </div>
+        }
     }
 
 </div>
