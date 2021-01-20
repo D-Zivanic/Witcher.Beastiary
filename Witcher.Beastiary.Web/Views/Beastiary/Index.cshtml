@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Witcher.Beastiary.Core.Models.MonsterModel>
+﻿@using Witcher.Beastiary.Core.Models
+@model IEnumerable<MonsterModel>
 @{
 }
 <h1>Beastiary</h1>
@@ -15,7 +16,7 @@
 <div class="row">
     @foreach (var beast in Model)
     {
-        @if (beast.Type == Witcher.Beastiary.Core.Models.MonsterType.Beast)
+        @if (beast.Type == MonsterType.Beast)
         {
             <div class="card w-50">
                 <div class="card-body">
@@ -35,7 +36,7 @@
 <div class="row">
     @foreach (var cursedOnes in Model)
     {
-        @if (cursedOnes.Type == Witcher.Beastiary.Core.Models.MonsterType.Cursed)
+        @if (cursedOnes.Type == MonsterType.Cursed_Ones)
         {
             <div class="card w-50">
                 <div class="card-body">

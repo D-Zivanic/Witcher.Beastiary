@@ -7,6 +7,6 @@ namespace Witcher.Beastiary.Core.Models
     public enum MonsterType
     {
         Beast,
-        Cursed
+        Cursed_Ones
     }
 }
