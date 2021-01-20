@@ -36,6 +36,9 @@ namespace Witcher.Beastiary.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
                     b.Property<string>("Weakness")
                         .HasColumnType("nvarchar(max)");
 

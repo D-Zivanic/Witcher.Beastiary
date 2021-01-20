@@ -8,6 +8,7 @@ namespace Witcher.Beastiary.Core.Models
         public int Id { get; set; }
         [Required, MinLength(2)]
         public string Name { get; set; }
+        public MonsterType Type { get; set; }
         public string Description { get; set; }
         [Required]
         public string Location { get; set; }

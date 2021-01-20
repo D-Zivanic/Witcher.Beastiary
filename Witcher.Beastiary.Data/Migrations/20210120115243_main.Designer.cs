@@ -9,8 +9,8 @@ using Witcher.Beastiary.Data.Context;
 namespace Witcher.Beastiary.Data.Migrations
 {
     [DbContext(typeof(MonsterDbContext))]
-    [Migration("20210107120806_ModelUpdate")]
-    partial class ModelUpdate
+    [Migration("20210120115243_main")]
+    partial class main
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,6 +37,9 @@ namespace Witcher.Beastiary.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
 
                     b.Property<string>("Weakness")
                         .HasColumnType("nvarchar(max)");

@@ -35,6 +35,7 @@ namespace Witcher.Beastiary.Data.Services
         public IEnumerable<MonsterModel> GetAll()
         {
             return _db.Beastiary.OrderBy(b => b.Name);
+            
         }
 
         public MonsterModel GetSingle(int id)
