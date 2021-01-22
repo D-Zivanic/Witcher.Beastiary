@@ -1,0 +1,13 @@
+﻿.jumbotron > .row > img {
+    margin-left:25%;
+}
+
+.jumbotron > .row > ul {
+    margin-left:10%;
+    list-style:none;
+
+}
+.jumbotron > #sub-menu {
+    margin-top:2%;
+    margin-left:42%;
+}
