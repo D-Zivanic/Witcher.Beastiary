@@ -1,16 +1,21 @@
 ﻿@model Witcher.Beastiary.Core.Models.MonsterModel
 
-<div class="row">
-    <a class="btn btn-sm btn-outline-info" asp-controller="Beast" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-    <a class="btn btn-sm btn-outline-danger" asp-route-id="@Model.Id" data-toggle="modal" data-target="#deleteModal">Delete</a>
-    <a class="btn btn-sm btn-outline-primary" asp-controller="Beastiary" asp-action="Index">Back to List</a>
+<div class="jumbotron">
+    <div class="row">
+        <img src="https://via.placeholder.com/150" />
+        <ul>
+            <li><h6>@Model.Name</h6></li>
+            <li><h6>@Model.Location</h6></li>
+            <li><h6>@Model.Weakness</h6></li>
+        </ul>
+    </div>
+    <div id="sub-menu" class="justify-content-center">
+        <a class="btn btn-sm btn-outline-info" asp-controller="Beast" asp-action="Edit" asp-route-id="@Model.Id"><i class="far fa-edit"></i></a>
+        <a class="btn btn-sm btn-outline-danger" asp-route-id="@Model.Id" data-toggle="modal" data-target="#deleteModal"><i class="far fa-trash-alt"></i></a>
+        <a class="btn btn-sm btn-outline-primary" asp-controller="Beastiary" asp-action="Index"><i class="fas fa-list"></i></a>
+    </div>
+
 </div>
-
-    <h2>@Model.Name</h2>
-
-    <h2>@Model.Location</h2>
-
-    <h2>@Model.Weakness</h2>
 
     <p>@Model.Description</p>
 
